@@ -56,7 +56,6 @@
         margin="30px"
       ></v-img>
       <v-spacer />
-
       <ul>
         <li><NuxtLink to="/" class="link">Home</NuxtLink></li>
         <li><NuxtLink to="/" class="link">Services</NuxtLink></li>
