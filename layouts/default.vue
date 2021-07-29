@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app dark>
     <!-- 
       <v-navigation-drawer
       v-model="drawer"
@@ -58,9 +58,9 @@
       <v-spacer />
       <ul>
         <li><NuxtLink to="/" class="link">Home</NuxtLink></li>
-        <li><NuxtLink to="/" class="link">Services</NuxtLink></li>
-        <li><NuxtLink to="/" class="link">Find a doctor</NuxtLink></li>
-        <li><NuxtLink to="/" class="link">Covid-19</NuxtLink></li>
+        <li><NuxtLink to="/AboutUs" class="link">Services</NuxtLink></li>
+        <li><NuxtLink to="/inspire" class="link">Find a doctor</NuxtLink></li>
+        <li><NuxtLink to="/Login-Register" class="link">Covid-19</NuxtLink></li>
         <li><NuxtLink to="/" class="link">Contact Us</NuxtLink></li>
 
         <v-btn id="dugme" color="my_red" rounded>Book Appioment</v-btn>
@@ -71,19 +71,76 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer app> </v-footer>
+    <v-footer absolute app height="250px">
+      <v-card
+        height="100%"
+        width="100vw"
+        id="holder"
+        :color="footer.back_color"
+      >
+        <v-card flat :color="footer.back_color" class="placer">
+          <v-card-text class="kraj">Our Name</v-card-text>
+          <v-card-text class="kraj icon">
+            <v-btn
+              width="10px"
+              height="15px"
+              v-for="icon in icons"
+              :key="icon"
+              class="mx-4"
+              icon
+            >
+              <v-icon size="30px">
+                {{ icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-text>
+        </v-card>
+        <v-card flat :color="footer.back_color" class="placer right">
+          <v-card-text class="kraj">Contact</v-card-text>
+          <v-card-text class="kraj">
+            <v-icon class="magin"> {{ iconica[0] }} </v-icon>+381 4854 84 21
+          </v-card-text>
+          <v-card-text class="kraj">
+            <v-icon class="magin"> {{ iconica[1] }} </v-icon
+            >kdmsaifa@gmail.com</v-card-text
+          >
+          <v-card-text class="kraj">
+            <v-icon class="magin"> {{ iconica[2] }} </v-icon>lole
+            cigana.12</v-card-text
+          >
+        </v-card>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      logo: "/logo.png",
-      appBar: {
-        color: "#ffffff",
-      },
-    };
+  data: () => ({
+    logo: "/logo.png",
+    appBar: {
+      color: "#ffffff",
+    },
+    footer: {
+      back_color: "my_blue",
+    },
+    icons: ["mdi-facebook", "mdi-instagram", "mdi-google"],
+    iconica: ["mdi-phone", "mdi-email", "mdi-map-marker"],
+    padless: false,
+    variant: "default",
+  }),
+  computed: {
+    localAttrs() {
+      const attrs = {};
+
+      if (this.variant === "default") {
+        attrs.absolute = false;
+        attrs.fixed = false;
+      } else {
+        attrs[this.variant] = true;
+      }
+      return attrs;
+    },
   },
 };
 </script>
@@ -116,6 +173,49 @@ export default {
     }
   }
 }
-
+#holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .placer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .kraj {
+      font-weight: 500;
+      font-size: 22px;
+      height: 45px;
+      width: 100%;
+      color: #fff;
+      padding: 5px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      > * {
+        margin: 5px;
+        padding: 0;
+      }
+    }
+  }
+  .right {
+    .kraj {
+      align-items: flex-start;
+      display: inline-block;
+      .magin {
+        margin-right: 10px;
+      }
+    }
+  }
+}
 /*}*/
 </style>
