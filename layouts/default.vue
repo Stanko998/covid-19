@@ -66,17 +66,18 @@
         <v-btn id="dugme" color="my_red" rounded>Book Appioment</v-btn>
       </ul>
     </v-app-bar>
-    <v-main>
+    <v-main id="main">
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer absolute app height="250px">
+    <v-footer absolute app height="250px" id="footer">
       <v-card
         height="100%"
         width="100vw"
         id="holder"
         :color="footer.back_color"
+        flat
       >
         <v-card flat :color="footer.back_color" class="placer">
           <v-card-text class="kraj">Our Name</v-card-text>
@@ -147,6 +148,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/variables";
+#main {
+  background-color: white !important;
+}
 #nav-bar {
   ul {
     display: flex;
@@ -173,46 +177,51 @@ export default {
     }
   }
 }
-#holder {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  .placer {
-    height: 100%;
+#footer {
+  background-color: $blue !important;
+
+  #holder {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    .kraj {
-      font-weight: 500;
-      font-size: 22px;
-      height: 45px;
-      width: 100%;
-      color: #fff;
-      padding: 5px;
-      margin: 0;
+    justify-content: space-around;
+
+    .placer {
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-    .icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      > * {
-        margin: 5px;
-        padding: 0;
+      .kraj {
+        font-weight: 500;
+        font-size: 22px;
+        height: 45px;
+        width: 100%;
+        color: #fff;
+        padding: 5px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        > * {
+          margin: 5px;
+          padding: 0;
+        }
       }
     }
-  }
-  .right {
-    .kraj {
-      align-items: flex-start;
-      display: inline-block;
-      .magin {
-        margin-right: 10px;
+    .right {
+      .kraj {
+        align-items: flex-start;
+        display: inline-block;
+        .magin {
+          margin-right: 10px;
+        }
       }
     }
   }
