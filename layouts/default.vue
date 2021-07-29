@@ -62,6 +62,7 @@
         <li><NuxtLink to="/" class="link">Find a doctor</NuxtLink></li>
         <li><NuxtLink to="/" class="link">Covid-19</NuxtLink></li>
         <li><NuxtLink to="/" class="link">Contact Us</NuxtLink></li>
+
         <v-btn id="dugme" color="my_red" rounded>Book Appioment</v-btn>
       </ul>
     </v-app-bar>
