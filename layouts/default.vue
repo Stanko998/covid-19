@@ -98,16 +98,16 @@
         </v-card>
         <v-card flat :color="footer.back_color" class="placer right">
           <v-card-text class="kraj">Contact</v-card-text>
-          <v-card-text class="kraj">
-            <v-icon class="magin"> {{ iconica[0] }} </v-icon>+381 4854 84 21
+          <v-card-text class="kraj span">
+            <v-icon class="margin"> {{ iconica[0] }} </v-icon>+38344222111
           </v-card-text>
-          <v-card-text class="kraj">
-            <v-icon class="magin"> {{ iconica[1] }} </v-icon
-            >kdmsaifa@gmail.com</v-card-text
+          <v-card-text class="kraj span">
+            <v-icon class="margin"> {{ iconica[1] }} </v-icon
+            >something@gmail.com</v-card-text
           >
-          <v-card-text class="kraj">
-            <v-icon class="magin"> {{ iconica[2] }} </v-icon>lole
-            cigana.12</v-card-text
+          <v-card-text class="kraj span">
+            <v-icon class="margin"> {{ iconica[2] }} </v-icon>Somewhere, 12,
+            Kosovo</v-card-text
           >
         </v-card>
       </v-card>
@@ -125,7 +125,7 @@ export default {
     footer: {
       back_color: "my_blue",
     },
-    icons: ["mdi-facebook", "mdi-instagram", "mdi-google"],
+    icons: ["mdi-facebook", "mdi-instagram", "mdi-twitter"],
     iconica: ["mdi-phone", "mdi-email", "mdi-map-marker"],
     padless: false,
     variant: "default",
@@ -219,9 +219,17 @@ export default {
       .kraj {
         align-items: flex-start;
         display: inline-block;
-        .magin {
+        justify-content: center;
+        font-weight: 600;
+        font-size: 26px;
+
+        .margin {
           margin-right: 10px;
         }
+      }
+      .span {
+        font-weight: 300;
+        font-size: 20px;
       }
     }
   }
