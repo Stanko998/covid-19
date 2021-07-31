@@ -68,14 +68,7 @@
             <v-btn
               height="100%"
               :color="appBar.color"
-              class="
-                font-weight-medium
-                my_red--text
-                rounded-pill
-                mx-1
-                py-1
-                px-2
-              "
+              class="font-weight-bold my_red--text rounded-pill mx-1 py-1 px-2"
               active-class=" "
               :to="link.to"
             >
@@ -83,15 +76,15 @@
             </v-btn>
           </v-flex>
         </v-layout>
-        <v-btn class="dugme" color="my_red rounded-lg ml-2  "
+        <v-btn class="dugme rounded-lg ml-2" color="my_red"
           >Book Appioment</v-btn
         >
       </div>
     </v-app-bar>
-    <v-main id="main">
-      <v-container>
+    <v-main>
+      <div>
         <Nuxt />
-      </v-container>
+      </div>
     </v-main>
     <v-footer absolute app height="250px" id="footer">
       <v-card
@@ -177,7 +170,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/variables";
-#main {
+.v-main {
   background-color: white !important;
 }
 .v-app-bar {
@@ -187,6 +180,8 @@ export default {
     .v-btn {
       box-shadow: none;
       color: white !important;
+      text-transform: none;
+
       &--active {
         color: white !important;
         span {
