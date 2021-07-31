@@ -2,11 +2,11 @@
   <div class="py-5">
     <h1 class="my_red--text text-center mb-4">Our Outstanding Services</h1>
     <v-container class="holer blue--text">
-      <v-row justify="space-around">
+      <v-row wrap>
         <v-col
           sm="4"
-          md="3"
-          xl="3"
+          md="4"
+          xl="4"
           align="center"
           v-for="service in services"
           :key="service"

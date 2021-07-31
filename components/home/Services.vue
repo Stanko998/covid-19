@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card color="white" class="rounded-lg my_blue--text pa-3">
+    <v-card color="white" class="rounded-lg my_blue--text pa-3 mx-md-10">
       <v-img :src="card.img" width="150px"> </v-img>
       <h2 class="mb-5">{{ card.title }}</h2>
       <p class="caption">{{ card.body }}</p>
@@ -29,6 +29,9 @@ export default {
   }
   h2 {
     width: 80%;
+  }
+  p {
+    text-align: center;
   }
 }
 </style>
