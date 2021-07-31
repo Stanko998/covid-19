@@ -27,7 +27,7 @@
     </v-navigation-drawer>
     -->
     <v-app-bar
-      id="nav-bar"
+      class="px-2"
       :color="appBar.color"
       min-width="100vw"
       fixed
@@ -49,14 +49,9 @@
       <v-spacer />
       -->
 
-      <v-img
-        :src="logo"
-        max-width="50px"
-        max-height="50px"
-        margin="30px"
-      ></v-img>
+      <v-img :src="logo" max-width="50px" max-height="50px"></v-img>
       <v-spacer />
-      <ul>
+      <!--<ul>
         <li><NuxtLink to="/" class="link">Home</NuxtLink></li>
         <li><NuxtLink to="/AboutUs" class="link">Services</NuxtLink></li>
         <li><NuxtLink to="/inspire" class="link">Find a doctor</NuxtLink></li>
@@ -65,6 +60,32 @@
 
         <v-btn id="dugme" color="my_red" rounded>Book Appioment</v-btn>
       </ul>
+      -->
+      <div class="glavni">
+        <v-layout>
+          <v-flex v-for="link in links" :key="link">
+            <v-btn
+              height="100%"
+              :color="appBar.color"
+              class="
+                font-weight-medium
+                my_red--text
+                rounded-pill
+                mx-1
+                py-1
+                px-2
+              "
+              active-class=" "
+              :to="link.to"
+            >
+              <span class="my_blue--text"> {{ link.name }}</span>
+            </v-btn>
+          </v-flex>
+        </v-layout>
+        <v-btn class="dugme" color="my_red rounded-lg ml-2  "
+          >Book Appioment</v-btn
+        >
+      </div>
     </v-app-bar>
     <v-main id="main">
       <v-container>
@@ -127,6 +148,13 @@ export default {
     },
     icons: ["mdi-facebook", "mdi-instagram", "mdi-twitter"],
     iconica: ["mdi-phone", "mdi-email", "mdi-map-marker"],
+    links: [
+      { name: "Home", to: "/" },
+      { name: "Services", to: "/inspire" },
+      { name: "Find a doctor", to: "/AboutUs" },
+      { name: "Covid-19", to: "/Login-Register" },
+      { name: "Contact Us", to: "/" },
+    ],
     padless: false,
     variant: "default",
   }),
@@ -151,7 +179,25 @@ export default {
 #main {
   background-color: white !important;
 }
-#nav-bar {
+.v-app-bar {
+  .glavni {
+    display: flex;
+    align-items: center;
+    .v-btn {
+      box-shadow: none;
+      color: white !important;
+      &--active {
+        color: white !important;
+        span {
+          color: $red !important;
+        }
+      }
+    }
+    .dugme {
+      box-shadow: 5px 5px 10px 0px gray;
+    }
+  }
+  /*
   ul {
     display: flex;
     align-items: center;
@@ -175,7 +221,7 @@ export default {
     #dugme {
       box-shadow: 5px 5px 15px 0px black;
     }
-  }
+  }*/
 }
 #footer {
   background-color: $blue !important;
