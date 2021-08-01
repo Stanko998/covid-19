@@ -14,12 +14,12 @@
               >
               <v-spacer></v-spacer>
               <v-flex md10>
-                <v-flex class="display-1">{{ item.title }}</v-flex>
-                <v-flex class="body-2 font-weight-light">
+                <div class="display-1">{{ item.title }}</div>
+                <div class="body-2 font-weight-light">
                   <p>
                     {{ item.body }}
                   </p>
-                </v-flex>
+                </div>
               </v-flex>
             </v-flex>
           </v-container>

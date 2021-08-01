@@ -4,7 +4,7 @@
     <v-container class="holer blue--text">
       <v-row wrap>
         <v-col
-          style="height: 450px"
+          style="height: 430px"
           sm="12"
           md="4"
           xl="4"

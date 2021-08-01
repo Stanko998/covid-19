@@ -1,14 +1,14 @@
 <template >
   <div>
     <BestOutcome />
-    <OutstandingServices
+    <Outstanding
       :title="Outsandings[0].title"
       :services="Outsandings[0].services"
       :shadow="Outsandings[0].shadow"
       :img_width="Outsandings[0].img_width"
     />
     <WhyUs />
-    <OutstandingServices
+    <Outstanding
       :title="Outsandings[1].title"
       :services="Outsandings[1].services"
       :shadow="Outsandings[1].shadow"
@@ -19,11 +19,11 @@
 
 <script>
 import BestOutcome from "/components/home/BestOutcome.vue";
-import OutstandingServices from "../components/home/OutstandingServices.vue";
+import Outstanding from "../components/home/Outstanding.vue";
 import WhyUs from "../components/home/WhyUs.vue";
 
 export default {
-  components: { BestOutcome, OutstandingServices, WhyUs },
+  components: { BestOutcome, Outstanding, WhyUs },
   data() {
     return {
       Outsandings: [
