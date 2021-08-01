@@ -146,7 +146,7 @@ export default {
       { name: "Home", to: "/" },
       { name: "Services", to: "/inspire" },
       { name: "Find a doctor", to: "/FindADoctor" },
-      { name: "Covid-19", to: "/Login-Register" },
+      { name: "Covid-19", to: "/Covid-19" },
       { name: "Contact Us", to: "/AboutUs" },
     ],
     padless: false,
