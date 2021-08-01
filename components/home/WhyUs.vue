@@ -1,21 +1,21 @@
 <template>
   <div>
     <div>
-      <v-img :src="img" alt="nema" class="black">
+      <v-img :src="img" alt="nema">
         <div class="centar">
           <h1 class="font-weight-bold mb-6">Why choose us ?</h1>
           <v-container>
             <v-flex row v-for="item in items" :key="item">
               <v-flex
-                lg1
+                md1
                 class="display-4 font-weight-bold"
                 style="opacity: 0.4"
                 >{{ item.id }}</v-flex
               >
               <v-spacer></v-spacer>
-              <v-flex lg10>
+              <v-flex md10>
                 <v-flex class="display-1">{{ item.title }}</v-flex>
-                <v-flex class="body-1 font-weight-light">
+                <v-flex class="body-2 font-weight-light">
                   <p>
                     {{ item.body }}
                   </p>
