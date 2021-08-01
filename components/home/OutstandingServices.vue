@@ -1,17 +1,18 @@
 <template>
   <div class="py-5">
-    <h1 class="my_red--text text-center mb-4">Our Outstanding Services</h1>
+    <h1 class="my_red--text text-center mb-4">{{ title }}</h1>
     <v-container class="holer blue--text">
       <v-row wrap>
         <v-col
-          sm="4"
+          style="height: 450px"
+          sm="12"
           md="4"
           xl="4"
           align="center"
           v-for="service in services"
           :key="service"
         >
-          <Services :card="service" />
+          <Services :card="service" :shadow="shadow" :img_width="img_width" />
         </v-col>
       </v-row>
     </v-container>
@@ -22,26 +23,9 @@
 import Services from "./Services.vue";
 export default {
   components: { Services },
+  props: ["title", "services", "shadow", "img_width"],
   data() {
-    return {
-      services: [
-        {
-          img: "Images/Home/Health Checkups.png",
-          title: "Health Checkups",
-          body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        },
-        {
-          img: "Images/Home/Emergency Ambulance.png",
-          title: "Emergency Ambulance",
-          body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        },
-        {
-          img: "Images/Home/247 Special Services.png",
-          title: "247 Special Services",
-          body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>

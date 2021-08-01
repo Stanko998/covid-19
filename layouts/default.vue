@@ -145,9 +145,9 @@ export default {
     links: [
       { name: "Home", to: "/" },
       { name: "Services", to: "/inspire" },
-      { name: "Find a doctor", to: "/AboutUs" },
+      { name: "Find a doctor", to: "/FindADoctor" },
       { name: "Covid-19", to: "/Login-Register" },
-      { name: "Contact Us", to: "/" },
+      { name: "Contact Us", to: "/AboutUs" },
     ],
     padless: false,
     variant: "default",
