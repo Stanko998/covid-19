@@ -26,75 +26,40 @@
       </v-list>
     </v-navigation-drawer>
     -->
-    <v-app-bar
-      class="px-2"
-      :color="appBar.color"
-      min-width="100vw"
-      fixed
-      app
-      hide-on-scroll
-    >
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> 
-    
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      -->
-
-      <v-img :src="logo" max-width="50px" max-height="50px"></v-img>
-      <v-spacer />
-
-      <!--<ul>
-        <li><NuxtLink to="/" class="link">Home</NuxtLink></li>
-        <li><NuxtLink to="/AboutUs" class="link">Services</NuxtLink></li>
-        <li><NuxtLink to="/inspire" class="link">Find a doctor</NuxtLink></li>
-        <li><NuxtLink to="/Login-Register" class="link">Covid-19</NuxtLink></li>
-        <li><NuxtLink to="/" class="link">Contact Us</NuxtLink></li>
-
-        <v-btn id="dugme" color="my_red" rounded>Book Appioment</v-btn>
-      </ul>
-      -->
-      <div class="glavni">
-        <v-layout>
-          <v-flex v-for="link in links" :key="link">
-            <v-btn
-              height="100%"
-              :color="appBar.color"
-              class="font-weight-bold my_red--text rounded-pill mx-1 py-1 px-2"
-              active-class=" "
-              :to="link.to"
+    <v-app-bar class="px-2" fixed app hide-on-scroll color="white">
+      <v-toolbar flat color="white">
+        <v-toolbar-title>
+          <v-img :src="logo" max-width="50px" max-height="50px"></v-img>
+        </v-toolbar-title>
+        <v-spacer />
+        <v-toolbar-items class="glavni">
+          <v-layout align-center>
+            <v-flex v-for="link in links" :key="link">
+              <v-btn
+                height="100%"
+                class="font-weight-bold rounded-pill mx-1 py-1 px-2 white"
+                :to="link.to"
+              >
+                <span class="my_blue--text"> {{ link.name }} </span>
+              </v-btn>
+            </v-flex>
+            <v-btn class="dugme rounded-lg ml-2" color="my_red"
+              >Book Appioment</v-btn
             >
-              <span class="my_blue--text"> {{ link.name }}</span>
-            </v-btn>
-          </v-flex>
-        </v-layout>
-        <v-btn class="dugme rounded-lg ml-2" color="my_red"
-          >Book Appioment</v-btn
-        >
-      </div>
+          </v-layout>
+        </v-toolbar-items>
+      </v-toolbar>
     </v-app-bar>
-    <v-main>
+
+    <v-main class="white">
       <div>
         <Nuxt />
       </div>
     </v-main>
-    <v-footer absolute app height="250px" id="footer">
-      <v-card
-        height="100%"
-        width="100vw"
-        id="holder"
-        :color="footer.back_color"
-        flat
-      >
-        <v-card flat :color="footer.back_color" class="placer">
+
+    <v-footer absolute app height="250px" class="my_blue">
+      <v-card height="100%" width="100vw" id="holder" class="my_blue" flat>
+        <v-card flat class="placer my_blue">
           <v-card-text class="kraj">Our Name</v-card-text>
           <v-card-text class="kraj icon">
             <v-btn
@@ -111,19 +76,16 @@
             </v-btn>
           </v-card-text>
         </v-card>
-        <v-card flat :color="footer.back_color" class="placer right">
+        <v-card flat class="placer right my_blue">
           <v-card-text class="kraj">Contact</v-card-text>
-          <v-card-text class="kraj span">
-            <v-icon class="margin"> {{ iconica[0] }} </v-icon>+38344222111
+          <v-card-text
+            class="kraj span"
+            v-for="contact in Contacts"
+            :key="contact"
+          >
+            <v-icon class="margin"> {{ contact.icon }} </v-icon
+            >{{ contact.body }}
           </v-card-text>
-          <v-card-text class="kraj span">
-            <v-icon class="margin"> {{ iconica[1] }} </v-icon
-            >something@gmail.com</v-card-text
-          >
-          <v-card-text class="kraj span">
-            <v-icon class="margin"> {{ iconica[2] }} </v-icon>Somewhere, 12,
-            Kosovo</v-card-text
-          >
         </v-card>
       </v-card>
     </v-footer>
@@ -134,14 +96,21 @@
 export default {
   data: () => ({
     logo: "/logo.png",
-    appBar: {
-      color: "#ffffff",
-    },
-    footer: {
-      back_color: "my_blue",
-    },
     icons: ["mdi-facebook", "mdi-instagram", "mdi-twitter"],
-    iconica: ["mdi-phone", "mdi-email", "mdi-map-marker"],
+    Contacts: [
+      {
+        icon: "mdi-phone",
+        body: "+38344222111",
+      },
+      {
+        icon: "mdi-email",
+        body: "something@gmail.com",
+      },
+      {
+        icon: "mdi-map-marker",
+        body: "Somewhere, 12, Kosovo",
+      },
+    ],
     links: [
       { name: "Home", to: "/" },
       { name: "Services", to: "/inspire" },
@@ -149,130 +118,76 @@ export default {
       { name: "Covid-19", to: "/Covid-19" },
       { name: "Contact Us", to: "/AboutUs" },
     ],
-    padless: false,
-    variant: "default",
   }),
-  computed: {
-    localAttrs() {
-      const attrs = {};
-
-      if (this.variant === "default") {
-        attrs.absolute = false;
-        attrs.fixed = false;
-      } else {
-        attrs[this.variant] = true;
-      }
-      return attrs;
-    },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "assets/variables";
-.v-main {
-  background-color: white !important;
-}
-.v-app-bar {
-  .glavni {
-    display: flex;
-    align-items: center;
-    .v-btn {
-      box-shadow: none;
-      color: white !important;
-      text-transform: none;
 
-      &--active {
-        color: white !important;
-        span {
-          color: $red !important;
-        }
-      }
-    }
-    .dugme {
-      box-shadow: 5px 5px 10px 0px gray;
+.v-app-bar .v-toolbar__items {
+  .v-btn {
+    box-shadow: none;
+    text-transform: none;
+    &--active span {
+      color: $red !important;
     }
   }
-  /*
-  ul {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    li {
-      list-style: none;
-      margin-right: 15px;
-      .link {
-        color: $blue;
-        text-decoration: none;
-        font-weight: 700;
-        transition: 300ms;
-        border-radius: 10px;
-        padding: 4px 10px;
-        &:hover {
-          background-color: $red;
-          color: white;
-        }
-      }
-    }
-    #dugme {
-      box-shadow: 5px 5px 15px 0px black;
-    }
-  }*/
+  .dugme {
+    box-shadow: 5px 5px 10px 0px gray;
+  }
 }
-#footer {
-  background-color: $blue !important;
 
-  #holder {
+.v-footer #holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .placer {
+    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-
-    .placer {
-      height: 100%;
+    justify-content: center;
+    .kraj {
+      font-weight: 500;
+      font-size: 22px;
+      height: 45px;
+      width: 100%;
+      color: #fff;
+      padding: 5px;
+      margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      .kraj {
-        font-weight: 500;
-        font-size: 22px;
-        height: 45px;
-        width: 100%;
-        color: #fff;
-        padding: 5px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        > * {
-          margin: 5px;
-          padding: 0;
-        }
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      > * {
+        margin: 5px;
+        padding: 0;
       }
     }
-    .right {
-      .kraj {
-        align-items: flex-start;
-        display: inline-block;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 26px;
+  }
+  .right {
+    .kraj {
+      align-items: flex-start;
+      display: inline-block;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 26px;
 
-        .margin {
-          margin-right: 10px;
-        }
+      .margin {
+        margin-right: 10px;
       }
-      .span {
-        font-weight: 300;
-        font-size: 20px;
-      }
+    }
+    .span {
+      font-weight: 300;
+      font-size: 20px;
     }
   }
 }

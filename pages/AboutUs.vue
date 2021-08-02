@@ -65,6 +65,7 @@ export default {
 
   data() {
     return {
+      pomoc: false,
       icons: [
         { tag: "mdi-email", name: "email" },
         { tag: "mdi-youtube", name: "youtube" },
