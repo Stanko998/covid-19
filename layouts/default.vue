@@ -1,13 +1,12 @@
 <template>
-  <v-app dark>
+  <v-app>
     <!-- 
       <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
-      app
-    >
+      app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -43,9 +42,7 @@
                 <span class="my_blue--text"> {{ link.name }} </span>
               </v-btn>
             </v-flex>
-            <v-btn class="dugme rounded-lg ml-2" color="my_red"
-              >Book Appioment</v-btn
-            >
+            <BookAppioment />
           </v-layout>
         </v-toolbar-items>
       </v-toolbar>
@@ -93,7 +90,9 @@
 </template>
 
 <script>
+import BookAppioment from "../components/home/BookAppioment.vue";
 export default {
+  components: { BookAppioment },
   data: () => ({
     logo: "/logo.png",
     icons: ["mdi-facebook", "mdi-instagram", "mdi-twitter"],
@@ -113,10 +112,10 @@ export default {
     ],
     links: [
       { name: "Home", to: "/" },
-      { name: "Services", to: "/inspire" },
+      { name: "Services", to: "/Services" },
       { name: "Find a doctor", to: "/FindADoctor" },
       { name: "Covid-19", to: "/Covid-19" },
-      { name: "Contact Us", to: "/AboutUs" },
+      { name: "Contact Us", to: "/ContactUs" },
     ],
   }),
 };

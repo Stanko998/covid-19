@@ -20,6 +20,7 @@
               elevation="5"
               >Book Appioment</v-btn
             >
+            <BookAppioment info="px-3 py-7 font-weight-medium" />
           </v-flex>
         </v-layot>
       </div>
@@ -28,7 +29,9 @@
 </template>
 
 <script>
+import BookAppioment from "./BookAppioment.vue";
 export default {
+  components: { BookAppioment },
   data() {
     return {
       img: "Images/Home/1.png",

@@ -1,46 +1,20 @@
 <template>
   <div>
-    <v-container>
-      <v-layout align-center>
-        <v-flex md4 class="text-center">
-          <h1 class="my_red--text">Find A Doctor</h1>
-        </v-flex>
-        <v-flex md4>
-          <v-select
-            :items="dropdown_font"
-            label="Select Doctor"
-            class="rounded-xl orange"
-            color="red"
-            background-color="blue"
-            item-color="green"
-            dense
-          ></v-select
-        ></v-flex>
-        <v-flex md4>
-          <v-overflow-btn
-            :items="dropdown_font"
-            label="Select Doctor"
-            class="black rounded-xl"
-          ></v-overflow-btn
-        ></v-flex>
-      </v-layout>
-    </v-container>
+    <select class="my_blue--text font-weight-bold display-1 pl-5 py-2">
+      <option value="">Select color</option>
+      <option :value="item" v-for="(item, i) in items" :key="item">
+        {{ items[i] }}
+      </option>
+    </select>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      dropdown_font: [
-        { text: "Internal med" },
-        { text: "Calibriolog med" },
-        { text: "Main med" },
-        { text: "Verdana" },
-      ],
-    };
+    return {};
   },
-
+  props: ["items"],
   mounted() {},
 
   methods: {},
@@ -48,4 +22,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  display: flex;
+  select {
+    margin: auto;
+    box-shadow: 0 0 10px black;
+    border-radius: 24px;
+    width: 70%;
+    &:focus-visible {
+      outline: none;
+      option:first-child {
+        display: none;
+      }
+    }
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Dropdown />
+    <Header />
     <Outstanding
       :title="Outsandings[0].title"
       :services="Outsandings[0].services"
@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import Dropdown from "../components/FindADoctor/Dropdown.vue";
+import Header from "../components/FindADoctor/Header.vue";
 import Outstanding from "../components/home/Outstanding.vue";
 export default {
-  components: { Outstanding, Dropdown },
+  components: { Outstanding, Header },
 
   directives: {},
 
