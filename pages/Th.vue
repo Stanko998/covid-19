@@ -1,11 +1,15 @@
 <template>
-  <div class="black--text"></div>
+  <div class="black--text">
+    <v-select light :items="items" label="Standard"> </v-select>
+  </div>
 </template>
 
 <script lang="ts">
 export default {
   data() {
-    return {};
+    return {
+      items: ["red", "green"],
+    };
   },
 
   mounted() {},
