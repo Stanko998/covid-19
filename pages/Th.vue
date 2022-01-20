@@ -1,6 +1,7 @@
 <template>
   <div class="black--text">
-    <v-select light :items="items" label="Standard"> </v-select>
+    <v-select light :items="items" label="Standard" style="color: red">
+    </v-select>
   </div>
 </template>
 

@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .v-select__selection.v-select__selection--comma,
 .v-select.v-text-field input {
   color: green !important;

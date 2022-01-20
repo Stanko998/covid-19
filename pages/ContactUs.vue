@@ -79,10 +79,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-select__slot > .v-label.theme--dark {
-  color: orange !important;
-}
-.v-label.v-label--active.theme--dark.primary--text {
-  color: green !important;
-}
 </style>
