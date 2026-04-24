@@ -67,3 +67,17 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+
+### `Versions`
+$ yarn --version
+1.22.19
+
+$ npm --version
+10.5.0
+
+$ node --version
+v18.20.0
+
+$ yarn add nuxt@2.18.1
+Nuxt @ v2.18.1
