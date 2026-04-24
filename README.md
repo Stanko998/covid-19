@@ -1,5 +1,24 @@
 # Covid19_Site
 
+## Versions
+This is required versions for this project and how to install
+
+```bash
+$ nvm install 16.20.0 
+$ nvm use 16.20.0 
+$ node --version 
+v16.20.0
+
+$ npm --version 
+8.19.4
+
+$ npm install -g yarn@1.22.19 
+$ yarn --version 
+1.22.19
+
+Nuxt @ v2.15.8 
+```
+
 ## Build Setup
 
 ```bash
