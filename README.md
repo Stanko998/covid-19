@@ -1,5 +1,22 @@
 # covid19-vardona
 
+## Versions
+This is required versions for this project and how to install
+
+$ nvm install 16.20.0 <br>
+$ nvm use 16.20.0 <br>
+$ node --version <br>
+v16.20.0
+
+$ npm --version <br>
+8.19.4
+
+$ npm install -g yarn@1.22.19 <br>
+$ yarn --version <br>
+1.22.19
+
+Nuxt @ v2.15.7  
+
 ## Build Setup
 
 ```bash
@@ -69,15 +86,4 @@ This directory contains your Vuex store files. Creating a file in this directory
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
 
-### `Versions`
-$ yarn --version
-1.22.19
 
-$ npm --version
-10.5.0
-
-$ node --version
-v18.20.0
-
-$ yarn add nuxt@2.18.1
-Nuxt @ v2.18.1
