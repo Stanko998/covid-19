@@ -3,19 +3,21 @@
 ## Versions
 This is required versions for this project and how to install
 
-$ nvm install 16.20.0 <br>
-$ nvm use 16.20.0 <br>
-$ node --version <br>
+```bash
+$ nvm install 16.20.0 
+$ nvm use 16.20.0 
+$ node --version 
 v16.20.0
 
-$ npm --version <br>
+$ npm --version 
 8.19.4
 
-$ npm install -g yarn@1.22.19 <br>
-$ yarn --version <br>
+$ npm install -g yarn@1.22.19 
+$ yarn --version 
 1.22.19
 
 Nuxt @ v2.15.7  
+```
 
 ## Build Setup
 
